@@ -39,12 +39,24 @@ public class DurationCalculator
         return a.until(b, ChronoUnit.SECONDS);
     }
 
+    /**
+     * Calculates the date after a start date plus a duration.
+     * 
+     * @param a Start date.
+     * @param d A duration.
+     * 
+     * @return The new date after the duration has been added to the start date.
+     */
     public static LocalDateTime calculateDateTimeAfterDuration(LocalDateTime a,
             Duration d)
     {
         return a.plus(d);
     }
 
+    /**
+     * Takes a number of seconds as input and converts them into a string representation
+     * that shows the number of days, hours, minutes and seconds.
+     */
     public static String convertDuationToString(long seconds)
     {
         StringBuilder builder = new StringBuilder();

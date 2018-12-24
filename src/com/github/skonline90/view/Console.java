@@ -18,25 +18,31 @@ import com.github.skonline90.model.TypedDuration;
  */
 public class Console
 {
-    /*
-     * Constants.
-     */
+    // ######################################## Constants
+    // ########################################
     private static final String DATE_TIME_FORMAT = "dd.MM.uuuu - HH:mm:ss";
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter
         .ofPattern(DATE_TIME_FORMAT);
     private static final String NEW_LINE = System.lineSeparator();
     private static final String PROMPT = "> ";
 
-    /*
-     * Fields.
+    // ######################################## Fields
+    // ########################################
+    /**
+     * Is used for recieving the user input.
      */
     private Scanner scanner;
+    /**
+     * This field saves the currently added user input.
+     */
     private String input;
+    /**
+     * This flag is used for handeling invalid user input.
+     */
     private boolean isInputWrong;
 
-    /**
-     * Constructor.
-     */
+    // ######################################## Constructor
+    // ########################################
     public Console()
     {
         this.scanner = new Scanner(System.in);
@@ -44,11 +50,15 @@ public class Console
         this.isInputWrong = false;
     }
 
+    // ######################################## Methods
+    // ########################################
+    /**
+     * Starts the loop for the user interaction. 
+     */
     public void startDialog()
     {
         sendWelcomeMessage();
 
-        // start the loop
         do
         {
             System.out.println(NEW_LINE + "Choose one of the following:"
@@ -94,16 +104,27 @@ public class Console
 
     }
 
+    /**
+     * Sends a welcome message.
+     */
     private void sendWelcomeMessage()
     {
         System.out.println("Welcome to the duration calculator!");
     }
 
+    /**
+     * Is used right before user input is required.
+     */
     private void prompt()
     {
         System.out.print(PROMPT);
     }
 
+    /**
+     * Initiates the required interactions to calculate a duration
+     * between two dates.
+     * Prints the result in the end.
+     */
     private void initiateDurationCalculationSequenceDialog()
     {
         LocalDateTime dateA = null, dateB = null;
@@ -213,6 +234,11 @@ public class Console
         ;
     }
 
+    /**
+     * Initiates the required interactions to calculate a date after a 
+     * certain duration.
+     * Prints the result in the end.
+     */
     private void initiateDateCalculationSequenceDialog()
     {
         LocalDateTime dateA = null;
@@ -269,6 +295,15 @@ public class Console
         ;
     }
 
+    /**
+     * If the user is required to input the date. The user is asked to input
+     * year, month, dayOfMonth, hour, minute, second.
+     * 
+     * If the user inputs an invalid date (f.e. 31.02.xxxx), then an error is
+     * displayed to the user and the input has to be reentered.
+     * 
+     * @return A LocalDateTime Object, which contains the user information.
+     */
     private LocalDateTime enterDateDetails()
     {
         int year, month, day, hour, minute, second;
@@ -381,6 +416,12 @@ public class Console
         return returnDateTime;
     }
 
+    /**
+     * Asks the user to input details for the duration. A duration has a unit
+     * (days, hours, minutes, seconds) and a quantity of that unit.
+     * 
+     * @return Returns an object containing the input information.
+     */
     public TypedDuration enterDurationDetails()
     {
         System.out.println(NEW_LINE + "Choose the unit for the duration:"
@@ -442,6 +483,10 @@ public class Console
         return result;
     }
 
+    /**
+     * This is used after a successful calculation. The user can choose
+     * to make another one or to quit the application.
+     */
     private void askForLoopRestart()
     {
         System.out.println(NEW_LINE + "Do you require more calculations?"
@@ -460,6 +505,9 @@ public class Console
         isInputWrong = false;
     }
 
+    /**
+     * This method is invoked when the user decides to quit the application.
+     */
     private void quit()
     {
         scanner.close();
