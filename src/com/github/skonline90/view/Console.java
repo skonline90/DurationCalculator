@@ -281,8 +281,7 @@ public class Console
             System.out.println(NEW_LINE + "Enter the YEAR of the date: ");
             do
             {
-                if (isInputWrong)
-                    System.out.println("Enter a valid command ...");
+                if (isInputWrong) System.out.println("Enter a valid YEAR ...");
                 prompt();
                 input = scanner.next();
                 isInputWrong = true;
@@ -296,8 +295,7 @@ public class Console
             System.out.println(NEW_LINE + "Enter the MONTH of the date: ");
             do
             {
-                if (isInputWrong)
-                    System.out.println("Enter a valid command ...");
+                if (isInputWrong) System.out.println("Enter a valid MONTH ...");
                 prompt();
                 input = scanner.next();
                 isInputWrong = true;
@@ -311,8 +309,7 @@ public class Console
             System.out.println(NEW_LINE + "Enter the DAY of the date: ");
             do
             {
-                if (isInputWrong)
-                    System.out.println("Enter a valid command ...");
+                if (isInputWrong) System.out.println("Enter a valid DAY ...");
                 prompt();
                 input = scanner.next();
                 isInputWrong = true;
@@ -326,8 +323,7 @@ public class Console
             System.out.println(NEW_LINE + "Enter the HOUR of the date: ");
             do
             {
-                if (isInputWrong)
-                    System.out.println("Enter a valid command ...");
+                if (isInputWrong) System.out.println("Enter a valid HOUR ...");
                 prompt();
                 input = scanner.next();
                 isInputWrong = true;
@@ -342,7 +338,7 @@ public class Console
             do
             {
                 if (isInputWrong)
-                    System.out.println("Enter a valid command ...");
+                    System.out.println("Enter a valid MINUTE ...");
                 prompt();
                 input = scanner.next();
                 isInputWrong = true;
@@ -357,7 +353,7 @@ public class Console
             do
             {
                 if (isInputWrong)
-                    System.out.println("Enter a valid command ...");
+                    System.out.println("Enter a valid SECOND ...");
                 prompt();
                 input = scanner.next();
                 isInputWrong = true;
@@ -407,7 +403,7 @@ public class Console
         System.out.println(NEW_LINE + "Enter the quantity: ");
         do
         {
-            if (isInputWrong) System.out.println("Enter a valid command ...");
+            if (isInputWrong) System.out.println("Enter a valid QUANTITY ...");
             prompt();
             input = scanner.next();
             isInputWrong = true;
