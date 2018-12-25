@@ -20,7 +20,7 @@ public class Console
 {
     // ######################################## Constants
     // ########################################
-    private static final String DATE_TIME_FORMAT = "dd.MM.uuuu - HH:mm:ss";
+    private static final String DATE_TIME_FORMAT = "EEEE, dd.MM.uuuu - HH:mm:ss";
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter
         .ofPattern(DATE_TIME_FORMAT);
     private static final String NEW_LINE = System.lineSeparator();
@@ -441,7 +441,7 @@ public class Console
         isInputWrong = false;
         int option = Integer.parseInt(input);
 
-        System.out.println(NEW_LINE + "Enter the quantity: ");
+        System.out.println(NEW_LINE + "Enter a postive quantity: ");
         do
         {
             if (isInputWrong) System.out.println("Enter a valid QUANTITY ...");
